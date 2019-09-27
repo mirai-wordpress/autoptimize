@@ -663,8 +663,8 @@ if ( function_exists( 'is_plugin_active' ) && ! is_plugin_active( 'autoptimize-c
 			$hook = add_options_page( __( 'Autoptimize Options', 'autoptimize' ), 'Autoptimize', 'manage_options', 'autoptimize', array( $this, 'show_message' ) );
 		}
 
-        add_action( 'admin_print_scripts-' . $hook, array( $this, 'autoptimize_admin_scripts' ) );
-        add_action( 'admin_print_styles-' . $hook, array( $this, 'autoptimize_admin_styles' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'autoptimize_admin_scripts' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'autoptimize_admin_styles' ) );
     }
 
     public function autoptimize_admin_scripts()
